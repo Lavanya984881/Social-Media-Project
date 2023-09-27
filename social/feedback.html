@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AddFeedback</title>
+    {% include 'cdnlines.html' %}
+</head>
+<style>
+    body{
+        background: linear-gradient(to right,gray,pink);
+    }
+    table{
+        border: 2px solid green;
+        box-shadow: 10px 20px black,yellow;
+    }
+</style>
+<body>
+{% include 'navbar.html' %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+           
+            <div class="text-right">
+                <a href="{% url 'addfeedback' %}" class="btn btn-outline-success mt-4">Add Feedback</a>
+            </div>
+            {% if tata %}
+            <h2 class="text-center">Feedbacks Are Here!</h2>
+            <table class="table table-bordered mt-4 text-center text-primary">
+                <tr>
+                    <th>Name</th>
+                    <th>Feedback</th>
+                </tr>
+                {% for i in tata %}
+                <tr>
+                    <td>{{ i.name }}</td>
+                    <td>{{ i.comment }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% else %}
+                 <h2 class="text-center">No Feedback Details Here!!</h2>
+            {% endif %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

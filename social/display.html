@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Display</title>
+</head>
+<body>
+    {% for image in images %}
+    <h2>{{ image.article_name }}</h2>
+    <p>{{ image.description }}</p>
+    <img src="{{ image.image.url }}" alt="Uploaded Image">
+    {% empty %}
+        <p>No images uploaded yet.</p>
+    {% endfor %}
+
+</body>
+</html>
